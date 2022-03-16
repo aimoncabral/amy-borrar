@@ -29,18 +29,18 @@ class Contenedor {
 
     getById(id){
         const products = fs.readFileSync(this.ruta, "utf-8");
-        const list2 = JSON.parse(products);        
-        const list3 = list2.filter(function (product) {
+        const productsParsed = JSON.parse(products);        
+        const productById = productsParsed.find(function (product) {
             return product.id == id;
-        });
-        console.log(`El producto con el id ${id} es`, (list3));
+        })
+        return productById
     };
     
     async getAll() {
         try {
             const products = await fs.promises.readFile(this.ruta, "utf-8");
-            const list = JSON.parse(products);
-            return list;
+            const productsParsed = JSON.parse(products);
+            return productsParsed;
         } catch (err) {
             if(err.code === 'ENOENT'){ // significa que el archivo no existe, por ende lo podemos crear con un array vacio
                 await fs.promises.writeFile(this.ruta, JSON.stringify([], null, 2))
@@ -75,8 +75,8 @@ async function testContenedor() {
     const products = await p.getAll();
     console.log('console, ', products)
     console.log(p.getById(3));
-    p.deleteById(2);
-    p.deleteAll();
+    // p.deleteById(2);
+    // p.deleteAll();
 }
 
 testContenedor();
