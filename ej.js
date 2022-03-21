@@ -71,9 +71,16 @@ class Contenedor {
 const p = new Contenedor("./productos.txt");
 
 async function testContenedor() {
-    await p.save({ title: "producto1", price: 200 });
+    await p.save({ title: "producto1", price: 200 })
+    await p.save({ title: "producto2", price: 500 })
+    await p.save({ title: "producto3", price: 600 })
+    await p.save({ title: "producto4", price: 1000 })
+    await p.save({ title: "producto5", price: 25000 })
+    await p.save({ title: "producto6", price: 20 })
+    await p.save({ title: "producto7", price: 300 })
+
     const products = await p.getAll();
-    console.log('console, ', products)
+    console.log(products)
     console.log(p.getById(3));
     // p.deleteById(2);
     // p.deleteAll();
@@ -81,6 +88,6 @@ async function testContenedor() {
 
 testContenedor();
 
-
-
-
+module.exports = {
+    Contenedor: Contenedor
+}
