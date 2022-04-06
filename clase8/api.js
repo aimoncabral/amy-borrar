@@ -31,6 +31,13 @@ class ProductsAPI {
         this.products.splice(ObjtoDelete, 1 );
     };
 
+    updateById(id, newData){
+        const productIndex = this.products.findIndex(product => product.id === id)
+        if (productIndex === -1) return -1
+
+        this.products[productIndex] = { ...this.products[productIndex], title: newData.title, price: newData.price }
+    };
+
     ultimo(){
         const products =  this.products
         const ultimoProducto = products[products.length - 1]

@@ -52,13 +52,12 @@ router.route('/productos/:id')
     })
 
     .put((req, res) => {
-        const products = api.getAll();
+        const idProduct = req.params.id
+        const {title, price} = req.body
+        const result = api.updateById(idProduct, {title, price})
 
-        // products.forEach((element, index) => {
-        //     if(element.id === req.params.id) {
-        //       products.splice(index, 1, req.body)
-        //     }
-        // };
+        if (result === -1) res.send('No se encontró el producto')
+        res.send('Actualizado')
     })
     
     .delete((req, res) => {
