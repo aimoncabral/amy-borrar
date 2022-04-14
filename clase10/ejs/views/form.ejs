@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS</title>
+</head>
+<body>
+    
+        <form action="/productos" method="post">
+            <div>
+                <label for="name">Producto</label>
+                <input type="text" id="name" name="name" placeholder="ej: Taza">
+            </div>
+            <div>
+                <label for="price">Precio</label>
+                <input type="text" id="price" name="price" placeholder="ej: 500">
+            </div>
+            <div>
+                <label for="productImg">Foto URL</label>
+                <input type="text" id="productImg" name="productImg" placeholder="ej: www.img.com/img">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <br>
+
+        <%- include('partials/tabla.ejs'); %>
+    
+</body>
+</html>

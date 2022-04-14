@@ -1,0 +1,36 @@
+html 
+    head
+        title=Pug
+    body
+        form(action="/productos", method="POST")
+            div
+                label(for= "name") Producto
+                input(type="text", id="name", name="name", placeholder="ej: Taza")
+
+            div
+                label(for= "price") Precio
+                input(type="text", id="price", name="price", placeholder="ej: 500")
+
+            div
+                label(for= "productImg") Foto
+                input(type="text", id="productImg", name="productImg", placeholder="ej: www.img.com/img")
+
+            div
+            button(type="submit") Enviar
+
+            table
+                thead
+                    tr
+                        th Producto
+                        th Precio
+                        th Foto
+
+                tbody
+                    script 
+                    each product in products
+                        tr
+                            td= product.name
+                            td= product.price
+                            td
+                                img(src=product.productImg, alt="Foto del producto")
+                            

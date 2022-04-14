@@ -1,0 +1,25 @@
+<!-- historial table -->
+<table>
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Foto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (products.length === 0) { %>
+            <tr>
+                <td>No hay productos</td>
+            </tr>
+        <% }else{ %>
+        
+        <% for (let i = 0; i < products.length; i++) { %>
+            <tr>
+                <td><%=products[i].name%></td>
+                <td><%=products[i].price%></td>
+                <td><img src="<%=products[i].productImg%>" alt="Foto del producto"></td>
+            </tr>
+        <% } } %>
+    </tbody>
+</table>
