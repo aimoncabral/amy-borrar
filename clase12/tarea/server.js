@@ -31,13 +31,6 @@ const messages = [];
 io.on('connection', function(socket) {
     console.log('A client is on line');
 
-    //productos
-    socket.emit('products', products);
-    socket.on('new-product', (data) => {
-        products.push(data);
-        io.sockets.emit('products', products);
-    });
-
     //mensajes
     socket.emit('messages', messages);
     socket.on('new-message', (data) => {

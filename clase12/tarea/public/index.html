@@ -9,41 +9,12 @@
         <script src="index.js"></script>
     </head>
     <body>
-        <h2>Ingrese producto</h2>
-        <form onsubmit="addProduct(this)">
-            <div>
-                <label for="name">Producto</label>
-                <input type="text" id="name" name="name" placeholder="ej: Taza">
-            </div>
-            <div>
-                <label for="price">Precio</label>
-                <input type="text" id="price" name="price" placeholder="ej: 500">
-            </div>
-            <div>
-                <label for="productImg">Foto URL</label>
-                <input type="text" id="productImg" name="productImg" placeholder="ej: www.img.com/img">
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
-                <!-- historial table -->
-        <table>
-            <h2>Lista de produtos</h2>
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Foto</th>
-                </tr>
-            </thead>
-            <tbody id="products">
-            </tbody>
-        </table>
         <form onsubmit="addMessage(this)">
             <h2>Centro de mensajes</h2>
-            <input type="text" id="username" placeholder="e-mail" required>
 
             <div id="messages"></div>
 
+            <input type="text" id="username" placeholder="e-mail" required>
             <input type="text" id="text" placeholder="consulta">
             <input type="submit" id="submitBtn" value="Enviar">
         </form>
