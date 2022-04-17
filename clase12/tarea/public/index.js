@@ -19,7 +19,7 @@ socket.on('messages', function (data) {render(data)});
 
 /// Esto toma los valores del formulario y envia los valores al servidor
 function addMessage(e) {
-    const lahora = Date()
+    const lahora = new Date().toLocaleString()
     const mensaje = {author: document.getElementById('username').value,
                     hora: lahora,
                     text: document.getElementById('text').value
